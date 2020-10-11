@@ -2,8 +2,8 @@
   <div class="index">
     <header>
       <div class="index-wrap">
-        <div class="index-adress">
-          杭州
+        <div class="index-adress" @click="toCity">
+          {{ changeCity }}
           <span><van-icon name="arrow-down"/></span>
         </div>
         <div class="index-search">
@@ -33,6 +33,12 @@
 <script>
 import indexTourism from "./index/IndexTourism.vue";
 import indexTab from "./index/IndexTab.vue";
+import img1 from "../assets/img/1.jpg";
+import img2 from "../assets/img/02.jpg";
+import img3 from "../assets/img/03.jpg";
+import img4 from "../assets/img/04.jpg";
+import img5 from "../assets/img/05.jpg";
+
 export default {
   data() {
     return {
@@ -40,28 +46,24 @@ export default {
       searchList: ["热搜", "武功山", "腾格里", "秦晋", "赛里木湖"],
       bannerList: [
         {
-          url: "https://qimg4.youxiake.com/upload/202009/29/28931601382715.jpg",
+          url: img1,
           id: 1
         },
         {
-          url: "https://qimg4.youxiake.com/upload/202009/30/59101601470481.jpg",
+          url: img2,
           id: 2
         },
         {
-          url: "https://qimg4.youxiake.com/upload/202009/29/89881601382862.jpg",
+          url: img3,
           id: 3
         },
         {
-          url: "https://qimg4.youxiake.com/upload/202009/12/12771599899401.jpg",
+          url: img4,
           id: 4
         },
         {
-          url: "https://qimg4.youxiake.com/upload/202009/17/81591600330408.jpg",
+          url: img5,
           id: 5
-        },
-        {
-          url: "https://qimg4.youxiake.com/upload/202009/29/50881601386949.jpg",
-          id: 6
         }
       ]
     };
@@ -69,13 +71,23 @@ export default {
   components: {
     indexTourism,
     indexTab
+  },
+  methods: {
+    toCity() {
+      this.$router.push("/City");
+    }
+  },
+  computed: {
+    changeCity() {
+      return this.$store.state.city.name;
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .index {
-  background-color: #e8e8e8;
+  background-color: #f2f2f2;
   header {
     width: 100%;
     height: 236px;
