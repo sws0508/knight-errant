@@ -14,7 +14,21 @@ const routes = [
       },
       {
         path: "/index",
-        component: () => import("../components/Index.vue")
+        component: () => import("../components/Index.vue"),
+        children: [
+          {
+            path: "/index",
+            redirect: "/short"
+          },
+          {
+            path: "/short",
+            component: () => import("../components/index/Short.vue")
+          },
+          {
+            path: "/fun",
+            component: () => import("../components/index/Fun.vue")
+          }
+        ]
       },
       {
         path: "/adress",
@@ -33,6 +47,14 @@ const routes = [
         component: () => import("../components/Mine.vue")
       }
     ]
+  },
+  {
+    path: "/City",
+    component: () => import("../components/index/City.vue")
+  },
+  {
+    path: "*",
+    component: () => import("../components/NotFound.vue")
   }
 ];
 

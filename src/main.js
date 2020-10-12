@@ -18,7 +18,13 @@ import {
   SwipeItem,
   Image as VanImage,
   GridItem,
-  Grid
+  Grid,
+  IndexBar,
+  IndexAnchor,
+  NavBar,
+  Cell,
+  Tabs,
+  Tab
 } from "vant";
 
 Vue.use(Tabbar);
@@ -30,6 +36,12 @@ Vue.use(SwipeItem);
 Vue.use(VanImage);
 Vue.use(Grid);
 Vue.use(GridItem);
+Vue.use(IndexBar);
+Vue.use(IndexAnchor);
+Vue.use(NavBar);
+Vue.use(Cell);
+Vue.use(Tab);
+Vue.use(Tabs);
 
 import "amfe-flexible";
 
