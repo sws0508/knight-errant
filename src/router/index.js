@@ -32,7 +32,33 @@ const routes = [
       },
       {
         path: "/adress",
-        component: () => import("../components/Adress.vue")
+        component: () => import("../components/Adress.vue"),
+        children: [
+          {
+            path: "/adress",
+            redirect: "/adress/reservation"
+          },
+          {
+            path: "/adress/reservation",
+            component: () => import("../components/adress/Reservation.vue")
+          },
+          {
+            path: "/adress/tourism",
+            component: () => import("../components/adress/Tourism.vue")
+          },
+          {
+            path: "/adress/strategy",
+            component: () => import("../components/adress/Strategy.vue")
+          },
+          {
+            path: "/adress/travel",
+            component: () => import("../components/adress/Travel.vue")
+          },
+          {
+            path: "/adress/video",
+            component: () => import("../components/adress/Video.vue")
+          }
+        ]
       },
       {
         path: "/meet",
@@ -44,13 +70,18 @@ const routes = [
       },
       {
         path: "/mine",
-        component: () => import("../components/Mine.vue")
+        component: () => import("../components/Mine.vue"),
+        meta: { needLogin: true }
       }
     ]
   },
   {
     path: "/City",
     component: () => import("../components/index/City.vue")
+  },
+  {
+    path: "/Login",
+    component: () => import("../components/Login.vue")
   },
   {
     path: "*",
@@ -61,5 +92,19 @@ const routes = [
 const router = new VueRouter({
   routes
 });
+
+// router.beforeEach((to, from, next) => {
+//   // 判断页面是否需要登录
+//   if (to.meta.needLogin) {
+//     // 说明这个页面需要登录
+//     if (localStorage.getItem("token")) {
+//       next();
+//     } else {
+//       next("/login");
+//     }
+//   } else {
+//     next();
+//   }
+// });
 
 export default router;

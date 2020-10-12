@@ -5,6 +5,7 @@ import store from "./store";
 
 //引入reset重置样式
 import "./assets/css/reset.css";
+import "./assets/css/style.css";
 
 //vue.use(vant);
 import {
@@ -22,7 +23,9 @@ import {
   NavBar,
   Cell,
   Tabs,
-  Tab
+  Tab,
+  Field,
+  Button
 } from "vant";
 
 Vue.use(Tabbar);
@@ -40,6 +43,8 @@ Vue.use(NavBar);
 Vue.use(Cell);
 Vue.use(Tab);
 Vue.use(Tabs);
+Vue.use(Field);
+Vue.use(Button);
 
 import "amfe-flexible";
 

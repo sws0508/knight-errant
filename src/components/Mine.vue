@@ -1,5 +1,7 @@
 <template>
   <div>
-    我的
+    <img src="" alt="" />
+    <p></p>
+    <p></p>
   </div>
 </template>
