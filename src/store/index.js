@@ -14,7 +14,7 @@ export default new Vuex.Store({
   },
   mutations: {
     getRecommends(state,payload){
-      state.recommendList = payload.data;
+      state.recommendList = payload.data.data;
     },
     changeCity(state, payload) {
       state.city = payload;

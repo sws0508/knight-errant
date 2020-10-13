@@ -55,7 +55,12 @@ const routes = [
   {
     path: "*",
     component: () => import("../components/NotFound.vue")
-  }
+  },
+  {
+    path:'/detail/:id',
+    name:'detail',
+    component:()=>import('../views/Detail.vue')
+  },
 ];
 
 const router = new VueRouter({
