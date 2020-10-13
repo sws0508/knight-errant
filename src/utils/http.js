@@ -8,7 +8,7 @@ import { Toast } from "vant";
 
 // 创建axios实例，全局的配置
 const instance = axios.create({
-  baseURL: "https://m.youxiake.com",
+  baseURL: "https://www.fastmock.site/mock/9962e5319f5edfcc2a04c6491d9a5f1f/knight-errant/api",
   timeout: 10000
 });
 
