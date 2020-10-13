@@ -27,10 +27,7 @@
       </van-swipe>
     </header>
     <index-tourism />
-
-        <index-tab />
-
-
+    <index-tab />
   </div>
 </template>
 <script>

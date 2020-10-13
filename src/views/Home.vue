@@ -53,7 +53,7 @@ export default {
       if (value.path == this.$route.path) {
         this.active = index;
       }
-      if(this.$route.path.indexOf('adress')!=-1) {
+      if (this.$route.path.indexOf("adress") != -1) {
         this.active = 1;
       }
     });

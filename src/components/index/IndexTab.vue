@@ -10,10 +10,7 @@
       {{ item.title }}
       <div class="underline" v-if="num === index"></div>
     </div>
-    <!-- <keep-alive> -->
-        <router-view></router-view>
-    <!-- </keep-alive> -->
-
+    <router-view></router-view>
   </div>
 </template>
 <script>

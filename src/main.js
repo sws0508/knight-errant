@@ -6,6 +6,7 @@ import store from "./store";
 //引入reset重置样式
 import "./assets/css/reset.css";
 import "./assets/css/style.css";
+import "./assets/css/mine.css";
 
 //vue.use(vant);
 import {

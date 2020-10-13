@@ -13,3 +13,8 @@
   border: 1px solid #FEDC34;
   border-radius: 13px;
 }
+
+.van-cell {
+  background-color: #fbfbfb;
+  margin-bottom: 15px;
+}
