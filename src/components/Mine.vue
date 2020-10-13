@@ -10,7 +10,7 @@
       <!-- 用户登录 -->
       <div class="user">
         <img src="../assets/img/mine.png" />
-        <span>点击登录/注册</span>
+        <span @click="toLogin">点击登录/注册</span>
       </div>
       <!-- record -->
       <div class="record">
@@ -88,12 +88,12 @@
 </template>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 
 export default {
   data() {
     return {
-      recommendList: [],
+      // recommendList: [],
       serveList: [
         {
           name: "签证订单",
@@ -156,6 +156,11 @@ export default {
     this.$store.dispatch("getRecommends")
     // this.getls();
   },
+  computed:{
+    recommendList(){
+      return this.$store.state.recommendList
+    }
+  },
   methods: {
     getls() {
       axios
@@ -175,6 +180,9 @@ export default {
         },
       });
     },
+    toLogin(){
+      this.$router.push("/Login")
+    }
   },
 };
 </script>
