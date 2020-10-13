@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
-import {getRecommends} from "../utils/api";
+import { getRecommends } from "../utils/api";
 
 Vue.use(Vuex);
 export default new Vuex.Store({
@@ -21,12 +21,10 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    async getRecommends({commit}){
+    async getRecommends({ commit }) {
       const res = await getRecommends();
-      commit("getRecommends",res)
+      commit("getRecommends", res);
     }
   },
   modules: {}
-  
- 
 });

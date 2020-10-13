@@ -10,13 +10,7 @@
       <!-- 用户登录 -->
       <div class="user">
         <img src="../assets/img/mine.png" />
-        <div>点击登录/注册</div>
-        <div> 
-            <span>sws</span>
-            <p>
-              <span>普通会员</span>
-            </p>
-        </div>
+        <span>点击登录/注册</span>
       </div>
       <!-- record -->
       <div class="record">
@@ -94,12 +88,12 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 
 export default {
   data() {
     return {
-      // recommendList: [],
+      recommendList: [],
       serveList: [
         {
           name: "签证订单",
@@ -161,11 +155,6 @@ export default {
   mounted() {
     this.$store.dispatch("getRecommends")
     // this.getls();
-  },
-  computed:{
-    recommendList(){
-      return this.$store.state.recommendList
-    }
   },
   methods: {
     getls() {

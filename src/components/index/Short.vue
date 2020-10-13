@@ -180,26 +180,5 @@ export default {
       border-radius: 7px;
     }
   }
-  // ul {
-  //   display: flex;
-  //   justify-content: space-around;
-  //   width: 100%;
-  //   li {
-  //     width: 66px;
-  //     height: 20px;
-  //     background: #ffed99;
-  //     border-radius: 10px;
-  //     font-size: 12px;
-  //     font-family: PingFang;
-  //     font-weight: bold;
-  //     color: #333333;
-  //     display: flex;
-  //     justify-content: center;
-  //     align-items: center;
-  //     &:first-child {
-  //       background: rgba($color: #ffed99, $alpha: 0.2);
-  //     }
-  //   }
-  // }
 }
 </style>
