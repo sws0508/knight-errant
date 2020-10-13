@@ -10,7 +10,13 @@
       <!-- 用户登录 -->
       <div class="user">
         <img src="../assets/img/mine.png" />
-        <span>点击登录/注册</span>
+        <div>点击登录/注册</div>
+        <div> 
+            <span>sws</span>
+            <p>
+              <span>普通会员</span>
+            </p>
+        </div>
       </div>
       <!-- record -->
       <div class="record">
