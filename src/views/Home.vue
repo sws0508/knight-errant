@@ -1,12 +1,13 @@
 <template>
   <div class="home">
     <router-view></router-view>
-    <van-tabbar v-model="active" :placeholder="true" active-color="orange">
+    <van-tabbar v-model="active"  :placeholder="true" active-color="orange">
       <van-tabbar-item
         :icon="item.i"
         :to="item.path"
         v-for="(item, index) in list"
         :key="index"
+        @click="Change(index)"
       >
         {{ item.title }}
       </van-tabbar-item>
@@ -18,7 +19,7 @@
 export default {
   data() {
     return {
-      active: 0,
+      active: +sessionStorage.getItem("activeIndex") || 0,
       list: [
         {
           i: "wap-home-o",
@@ -48,15 +49,10 @@ export default {
       ]
     };
   },
-  mounted() {
-    this.list.forEach((value, index) => {
-      if (value.path == this.$route.path) {
-        this.active = index;
-      }
-      if (this.$route.path.indexOf("adress") != -1) {
-        this.active = 1;
-      }
-    });
+  methods:{
+    Change(index){
+      sessionStorage.setItem("activeIndex",index)
+    }
   }
 };
 </script>

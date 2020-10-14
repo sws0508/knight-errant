@@ -10,7 +10,11 @@
       <!-- 用户登录 -->
       <div class="user">
         <img src="../assets/img/mine.png" />
-        <span @click="toLogin">点击登录/注册</span>
+        <div class="login" @click="toLogin">点击登录/注册</div>
+        <div class="name">
+          <i>sws</i>
+          <span>普通会员</span>
+        </div>
       </div>
       <!-- record -->
       <div class="record">
@@ -59,7 +63,7 @@
       <div class="serve_header">我的服务</div>
       <ul class="serve_content order_and_serve">
         <li v-for="(item, index) in serveList" :key="index">
-          <img :src="item.url" />
+          <img :src="item.url" style="width:16px;height:18px" />
           <span>{{ item.name }}</span>
         </li>
       </ul>
@@ -220,8 +224,31 @@ export default {
       margin: 0 10px;
     }
 
-    span {
+    .login {
       font-size: 24px;
+      display: none;
+    }
+    .name {
+      height: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      i{
+        font-size: 18px;
+        margin-left: 10px;
+        font-weight: 700;
+      }
+      span{
+        width: 60px;
+        height: 16px;
+        font-size: 8px;
+        background: #fff2b3;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+      }
     }
   }
 
