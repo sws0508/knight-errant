@@ -1,13 +1,13 @@
 <template>
   <div class="home">
     <router-view></router-view>
-    <van-tabbar v-model="active" :placeholder="true" active-color="orange">
+    <van-tabbar v-model="active"  :placeholder="true" active-color="orange">
       <van-tabbar-item
         :icon="item.i"
         :to="item.path"
         v-for="(item, index) in list"
         :key="index"
-        @click="change(index)"
+        @click="Change(index)"
       >
         {{ item.title }}
       </van-tabbar-item>
@@ -49,23 +49,10 @@ export default {
       ]
     };
   },
-  mounted() {
-    // this.list.forEach((value, index) => {
-    //   if (value.path == this.$route.path) {
-    //     this.active = index;
-    //   }
-    //   if (this.$route.path.indexOf("adress") != -1) {
-    //     this.active = 1;
-    //   }
-    //   if (this.$route.path.indexOf("meet") != -1) {
-    //     this.active = 2;
-    //   }
-    // });
-  },
-  methods: {
-    change(index){
+  methods:{
+    Change(index){
       sessionStorage.setItem("activeIndex",index)
     }
-  },
+  }
 };
 </script>

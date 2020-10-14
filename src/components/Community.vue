@@ -1,12 +1,9 @@
 <template>
   <div class="community">
-    <van-search
-      v-model="value"
-      shape="round"
-      background="#4fc08d"
-      placeholder="搜索目的地/攻略/摄影作品登"
-    />
-
+    <div class="search">
+      <van-icon name="search" />
+      <input type="text" placeholder="请输入搜索关键词">
+    </div>
     <main>
       <div class="nav">
         <div class="nav_item">
@@ -107,7 +104,8 @@ export default {
           code:3684,
           meg:54
         }
-      ]
+      ],
+      value: '',
     }
   },
   props: {
@@ -133,8 +131,20 @@ export default {
   bottom: 0;
   background: #b5b5b5;
 }
-.van-search {
-  margin: 30px 0;
+.search{
+  display: inline-flex;
+  margin: 20px auto;
+  margin-left: 60px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 6px;
+  justify-content: center;
+  input{
+    border: none;
+    width: 200px;
+    margin-left: 10px;
+  }
 }
 main{
   position: absolute;
