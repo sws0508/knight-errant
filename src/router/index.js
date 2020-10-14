@@ -95,6 +95,8 @@ const routes = [
         component: () => import("../components/Mine.vue"),
         meta: { needLogin: true }
       }
+
+      
     ]
   },
   {
