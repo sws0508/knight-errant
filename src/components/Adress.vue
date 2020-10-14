@@ -3,9 +3,9 @@
     <header>
       <img src="../assets/img/xihu.jpg" alt="" />
       <span class="adress-title">
-        杭州
+        {{ changeCity }}
       </span>
-      <div class="adress-tab">
+      <div class="adress-tab" @click="toCity">
         切换
         <span><van-icon name="arrow-down"/></span>
       </div>
@@ -26,6 +26,16 @@ export default {
   components: {
     adressIntroduce,
     adressList
+  },
+  methods: {
+    toCity() {
+      this.$router.push("/City");
+    }
+  },
+  computed: {
+    changeCity() {
+      return this.$store.state.city.name;
+    }
   }
 };
 </script>

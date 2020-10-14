@@ -7,6 +7,7 @@
         :to="item.path"
         v-for="(item, index) in list"
         :key="index"
+        @click="change(index)"
       >
         {{ item.title }}
       </van-tabbar-item>
@@ -18,7 +19,7 @@
 export default {
   data() {
     return {
-      active: 0,
+      active: +sessionStorage.getItem("activeIndex") || 0,
       list: [
         {
           i: "wap-home-o",
@@ -49,14 +50,22 @@ export default {
     };
   },
   mounted() {
-    this.list.forEach((value, index) => {
-      if (value.path == this.$route.path) {
-        this.active = index;
-      }
-      if (this.$route.path.indexOf("adress") != -1) {
-        this.active = 1;
-      }
-    });
-  }
+    // this.list.forEach((value, index) => {
+    //   if (value.path == this.$route.path) {
+    //     this.active = index;
+    //   }
+    //   if (this.$route.path.indexOf("adress") != -1) {
+    //     this.active = 1;
+    //   }
+    //   if (this.$route.path.indexOf("meet") != -1) {
+    //     this.active = 2;
+    //   }
+    // });
+  },
+  methods: {
+    change(index){
+      sessionStorage.setItem("activeIndex",index)
+    }
+  },
 };
 </script>

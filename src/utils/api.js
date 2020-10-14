@@ -17,5 +17,5 @@ export function getDetailInfo(data) {
 }
 
 export function getRecommends(params) {
-  return http.get("/lines/userrecommends", params);
+  return http.get('/recommend', params)
 }

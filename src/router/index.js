@@ -62,7 +62,29 @@ const routes = [
       },
       {
         path: "/meet",
-        component: () => import("../components/Meet.vue")
+        component: () => import("../components/Meet.vue"),
+        children: [
+          {
+            path: "/meet",
+            redirect: "/meet/focus"
+          },
+          {
+            path: "/meet/focus",
+            component: () => import("../components/meet/Focus.vue")
+          },
+          {
+            path: "/meet/found",
+            component: () => import("../components/meet/Found.vue")
+          },
+          {
+            path: "/meet/select",
+            component: () => import("../components/meet/Select.vue")
+          },
+          {
+            path: "/meet/mine-video",
+            component: () => import("../components/meet/MineVideo.vue")
+          }
+        ]
       },
       {
         path: "/community",
@@ -86,7 +108,12 @@ const routes = [
   {
     path: "*",
     component: () => import("../components/NotFound.vue")
-  }
+  },
+  {
+    path:'/detail/:id',
+    name:'detail',
+    component:()=>import('../views/Detail.vue')
+  },
 ];
 
 const router = new VueRouter({
