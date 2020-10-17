@@ -1,5 +1,6 @@
 <template>
   <div class="mine">
+    <div>
     <!-- mine_header -->
     <div class="mine_header">
       <!-- top_icon -->
@@ -70,29 +71,34 @@
     </div>
     <!-- mine_recommend -->
     <div class="mine_recommend">
-      <div class="recommend_header">精选推荐</div>
-      <ul class="recommend_content">
-        <li
-          v-for="(item, index) in recommendList"
-          :key="index"
-          @click="toDetail(item.pid)"
-        >
-          <img :src="item.img" alt="" />
-          <div class="info">
-            <p class="title">{{ item.name }}</p>
-            <p class="group">
-              {{ item.productType }} · {{ item.theme_label }} · {{ item.days }}
-            </p>
-            <p class="price">¥ {{ item.minprice }}起</p>
-          </div>
-        </li>
-      </ul>
+      <div>
+        <div class="recommend_header">精选推荐</div>
+        <ul class="recommend_content">
+          <li
+            v-for="(item, index) in recommendList"
+            :key="index"
+            @click="toDetail(item.pid)"
+          >
+            <img :src="item.img" alt="" />
+            <div class="info">
+              <p class="title">{{ item.name }}</p>
+              <p class="group">
+                {{ item.productType }} · {{ item.theme_label }} · {{ item.days }}
+              </p>
+              <p class="price">¥ {{ item.minprice }}起</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+// 引入better-scroll
+import BetterScroll from 'better-scroll';
 
 export default {
   data() {
@@ -165,6 +171,19 @@ export default {
       return this.$store.state.recommendList
     }
   },
+  watch: {
+    async recommendList(){
+      console.log(11)
+      await this.$nextTick();
+      new BetterScroll('.mine',{
+          // 允许纵向滚动
+        scrollY: true,
+        scrollX: false,
+        click: true,
+        pullUpLoad:true
+      })
+    }
+  },
   methods: {
     getls() {
       axios
@@ -194,6 +213,11 @@ export default {
 <style lang="scss" scoped>
 .mine {
   background: #f2f2f2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 50px;
 }
 
 .mine_header {
